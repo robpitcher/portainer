@@ -1,0 +1,2 @@
+# Minecraft
+`minecraft-atm10.yml` deploys a Java-based minecraft server with All the Mods 10. Requires an API key from curseforge. Specify the api key as an environment variable: `CF_API_KEY`. See [here](https://docker-minecraft-server.readthedocs.io/en/latest/types-and-platforms/mod-platforms/auto-curseforge/) for more info.

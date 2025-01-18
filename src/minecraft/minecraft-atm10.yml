@@ -1,0 +1,25 @@
+services:
+  mc:
+    image: itzg/minecraft-server
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      MOD_PLATFORM: AUTO_CURSEFORGE
+      CF_API_KEY: ${CF_API_KEY}
+      CF_SLUG: all-the-mods-10
+      MEMORY: 4G
+      CF_OVERRIDES_EXCLUSIONS: |
+        shaderpacks/**
+    volumes:
+      - /var/lib/docker/volumes/minecraft/_data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: '3.00'
+          memory: '8192M'
+        reservations:
+          memory: '256M'
