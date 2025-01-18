@@ -22,7 +22,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.00' # Limit to 50% of a single CPU
-          memory: '1024M' # Limit max RAM to 512MB
+          cpus: '1.00'
+          memory: '1024M'
         reservations:
-          memory: '256M' # Reserve 256MB of RAM
+          memory: '256M'
