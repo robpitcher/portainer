@@ -1,0 +1,22 @@
+version: '3.6'
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: unless-stopped
+    ports:
+      - '9090:9090'
+    volumes:
+      - prometheus_data:/prometheus
+      - prometheus_config:/etc/prometheus
+    deploy:
+      resources:
+        limits:
+          cpus: '1.00'
+          memory: '1024M'
+        reservations:
+          memory: '256M'
+
+volumes:
+  prometheus_data:
+  prometheus_config:
