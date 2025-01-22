@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  adoagent:
+    image: rdp870/ado-agent:latest
+    container_name: ado-agent
+    restart: unless-stopped
+    environment:
+      AZP_AGENT_NAME: "Docker Agent - Linux"
+      AZP_URL: ${AZP_URL}
+      AZP_TOKEN: ${AZP_TOKEN}
+      AZP_POOL: ${AZP_POOL}
+    deploy:
+      resources:
+        limits:
+          cpus: '1.00'
+          memory: '1024M'
+        reservations:
+          memory: '256M'
