@@ -1,4 +1,4 @@
-version: '3.6'
+---
 services:
   adoagent:
     image: rdp870/ado-agent:latest
