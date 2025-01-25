@@ -16,7 +16,7 @@ services:
       CF_OVERRIDES_EXCLUSIONS: |
         shaderpacks/**
     volumes:
-      - /var/lib/docker/volumes/minecraft/_data:/data
+      - minecraft_data:/data
     deploy:
       resources:
         limits:
@@ -24,3 +24,6 @@ services:
           memory: '8192M'
         reservations:
           memory: '256M'
+
+volumes:
+  minecraft_data:
