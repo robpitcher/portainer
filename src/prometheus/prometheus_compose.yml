@@ -8,7 +8,7 @@ services:
       - '9090:9090'
     volumes:
       - prometheus_data:/prometheus
-      - prometheus_config:/etc/prometheus
+      - /var/lib/docker/volumes/configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     deploy:
       resources:
         limits:
@@ -19,4 +19,3 @@ services:
 
 volumes:
   prometheus_data:
-  prometheus_config:
