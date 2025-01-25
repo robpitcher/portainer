@@ -5,8 +5,8 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - /var/lib/docker/volumes/adguard-conf/_data:/opt/adguardhome/conf
-      - /var/lib/docker/volumes/adguard-work/_data:/opt/adguardhome/work
+      - /var/lib/docker/volumes/configs/adguard:/opt/adguardhome/conf
+      - adguard_data:/opt/adguardhome/work
     ports:
       - 53:53/tcp
       - 53:53/udp
@@ -26,3 +26,6 @@ services:
           memory: '2048M'
         reservations:
           memory: '256M'
+
+volumes:
+  adguard_data:
