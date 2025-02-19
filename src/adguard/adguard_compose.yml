@@ -2,6 +2,8 @@
 services:
   adguardhome:
     image: adguard/adguardhome
+    labels:
+      - namespace=monitor
     restart: unless-stopped
     network_mode: host
     volumes:

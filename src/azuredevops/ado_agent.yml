@@ -3,6 +3,8 @@ services:
   adoagent:
     image: rdp870/ado-agent:latest
     container_name: ado-agent
+    labels:
+      - namespace=monitor
     restart: unless-stopped
     environment:
       AZP_AGENT_NAME: "Docker Agent - Linux"

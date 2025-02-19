@@ -2,6 +2,8 @@
 services:
   mc:
     image: itzg/minecraft-server
+    labels:
+      - namespace=monitor
     restart: unless-stopped
     tty: true
     stdin_open: true
