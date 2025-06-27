@@ -1,0 +1,22 @@
+---
+services:
+  ruster:
+    image: didstopia/rust-server
+    container_name: ruster
+    labels:
+      - namespace=monitor
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /home/rob/docker/ruster:/steamcmd/rust
+    environment:
+      - RUST_SERVER_WORLDSIZE=${WORLDSIZE}
+      - RUST_OXIDE_ENABLED=1
+      - RUST_OXIDE_UPDATE_ON_BOOT=1
+    deploy:
+      resources:
+        limits:
+          cpus: '4.00'
+          memory: '8192M'
+        reservations:
+          memory: '256M'
